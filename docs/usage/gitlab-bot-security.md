@@ -21,7 +21,7 @@ It's also important to remember that when accounts are invited into projects or 
 If you are running a self-hosted Renovate service, it is advisable to:
 
 - Run a shared service only within projects which have shared visibility/security within the users, or which have a low risk that a user would try to gain access to a private project they don't otherwise have access to
-- If running with `autodiscover`, also configure a value for `autodiscoverFilter` so that the bot can't be invited to projects or groups you don't intend
+- If running with `autodiscover`, also configure a value for `autodiscoverFilter` so that the bot can't be invited to projects or groups you don't intend. You also have the option to set `autodiscoverFilterExclude` to further filter the repository list.
 
 ## Security solutions and workarounds
 

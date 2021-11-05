@@ -657,6 +657,14 @@ const options: RenovateOptions[] = [
     default: null,
   },
   {
+    name: 'autodiscoverFilterExclude',
+    description: 'Filter out repositories from the Filter list of autodiscovered repositories.',
+    stage: 'global',
+    type: 'array',
+    subtype: 'string',
+    default: [],
+  },
+  {
     name: 'prCommitsPerRunLimit',
     description:
       'Set a maximum number of commits per Renovate run. Default is no limit.',

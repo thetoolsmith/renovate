@@ -73,6 +73,8 @@ e.g.
 
 When you enable `autodiscover`, by default, Renovate will run on _every_ repository that the bot account can access.
 If you want Renovate to run on only a subset of those, use the `autodiscoverFilter` option to limit the bot to only the wanted repositories.
+You can optionally exclude a subset of the discovered  repositories returned from the `autodiscoverFilter` option by setting 
+the `autodiscoverFilterExclude` option.
 
 ## autodiscoverFilter
 
@@ -84,6 +86,19 @@ e.g.
 ```json
 {
   "autodiscoverFilter": "project/*"
+}
+```
+
+## autodiscoverFilterExclude
+
+You can use this option to filter out a list of repositories included in the repository list discovered by `autodiscoverFilter`.
+It takes an array of repository names.
+
+e.g.
+
+```json
+{
+  "autodiscoverFilterExclude": ["project/notme", "project/notmeeither"]
 }
 ```
 

@@ -54,7 +54,14 @@ export async function autodiscoverRepositories(
           found = true;
           logger.debug({ repository }, 'Using configured repository settings');
           // TODO: fix typings
-          discovered[i] = configuredRepo as never;
+          logger.debug(
+            'Checking autodiscovered repositories against autodiscovered exclude list'
+          );
+          if (!config.autodiscoverFilterExclude.includes(repoName(discovered[i]))) {
+            discovered[i] = configuredRepo as never;
+          } else {
+            logger.warn({ repository }, 'Configured repository found is excluded from autodiscover list');
+          }
         }
       }
       if (!found) {

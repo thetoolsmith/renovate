@@ -49,6 +49,7 @@ describe('workers/global/autodiscover', () => {
   it('filters autodiscovered github repos', async () => {
     config.autodiscover = true;
     config.autodiscoverFilter = 'project/re*';
+    config.autodiscoverFilterExclude = ['project/notme'];
     config.platform = PlatformId.Github;
     hostRules.find = jest.fn(() => ({
       token: 'abc',
@@ -62,6 +63,7 @@ describe('workers/global/autodiscover', () => {
   it('filters autodiscovered github repos but nothing matches', async () => {
     config.autodiscover = true;
     config.autodiscoverFilter = 'project/re*';
+    config.autodiscoverFilterExclude = ['project/notme'];
     config.platform = 'github';
     hostRules.find = jest.fn(() => ({
       token: 'abc',

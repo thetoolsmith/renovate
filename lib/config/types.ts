@@ -72,6 +72,7 @@ export interface RenovateSharedConfig {
 export interface GlobalOnlyConfig {
   autodiscover?: boolean;
   autodiscoverFilter?: string;
+  autodiscoverFilterExclude?: string[];
   baseDir?: string;
   cacheDir?: string;
   detectHostRulesFromEnv?: boolean;
